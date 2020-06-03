@@ -42,7 +42,7 @@ const MenuScreen = (props) => {
     Animated.timing(animation, {
       toValue: 0,
       duration: 350
-    }).start( async () => {
+    }).start(async () => {
       await setViewRatingsTab(prevState => !prevState);
       Animated.timing(animation, {
         toValue: 1,
@@ -266,7 +266,7 @@ const styles = StyleSheet.create({
   },
   productListTab: {
     backgroundColor: Colors.lightAccent,
-    flex: 1
+    height: 435,
   },
   ratingsTabContainer: {
     backgroundColor: 'rgba(220,220,220,0.1)',
@@ -277,7 +277,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    
+
     backgroundColor: Colors.lightLightAccent,
   },
   menuHeaderContainer: {
@@ -295,7 +295,7 @@ const styles = StyleSheet.create({
   },
   bottomContainer: {
     width: '100%',
-
+    height: '100%'
   }
 });
 
