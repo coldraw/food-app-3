@@ -13,7 +13,7 @@ const RateSellerScreen = props => {
   const [rating, setRating] = useState(0);
 
   const showToast = () => {
-    ToastAndroid.showWithGravity(`Rating saved!`, ToastAndroid.SHORT, ToastAndroid.CENTER);
+    ToastAndroid.showWithGravity(`Rating was saved!`, ToastAndroid.SHORT, ToastAndroid.CENTER);
   };
 
   const dispatch = useDispatch();
