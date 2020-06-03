@@ -1,0 +1,15 @@
+export default {
+  primary: '#cf1111',
+  lightPrimary: '#e84a4a',
+  primaryTransparent: 'rgba(232, 74, 74, 0.8)',
+  accent: '#ffb938',
+  lightAccent: '#ffe8bd',
+  lightLightAccent: '#fcedcf',
+  accentTransparent: 'rgba(255, 185, 56, 0.8)',
+  darkText: '#2b2929',
+  lightRed: '#ebdada',
+  lightLightRed: '#f5ebeb',
+  green: '#39b85b',
+  greenTransparent: 'rgba(57, 184, 91, 0.5)',
+  darkGrey: 'rgb(100,100,100)',
+};
