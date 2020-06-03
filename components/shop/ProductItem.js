@@ -63,14 +63,14 @@ const ProductItem = (props) => {
               <View style={styles.columnLeftContent}>
                 <View style={viewExpanded ? styles.actionsExpanded : styles.actions}>
                   <View style={styles.buttonContainer}>
-                    < TouchableWithoutFeedback onPress={props.onEditProductItem} useForeground>
+                    <TouchableWithoutFeedback onPress={props.onEditProductItem} useForeground>
                       <View style={styles.buttonEdit}>
                         <Text style={styles.buttonText}>edit</Text>
                       </View>
-                    </ TouchableWithoutFeedback>
+                    </TouchableWithoutFeedback>
                   </View>
                   <View style={styles.buttonContainer}>
-                    < TouchableWithoutFeedback onPress={props.onDeleteProduct} useForeground>
+                    <TouchableWithoutFeedback onPress={props.onDeleteProduct} useForeground>
                       <View style={styles.buttonDelete}>
                         <Ionicons
                           name={Platform.OS === 'android' ? 'md-trash' : 'ios-trash'}
@@ -78,7 +78,7 @@ const ProductItem = (props) => {
                           color={'white'}
                         />
                       </View>
-                    </ TouchableWithoutFeedback>
+                    </TouchableWithoutFeedback>
                   </View>
                 </View>
               </View>

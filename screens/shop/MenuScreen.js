@@ -295,7 +295,7 @@ const styles = StyleSheet.create({
   },
   bottomContainer: {
     width: '100%',
-    height: '100%',
+
   }
 });
 
