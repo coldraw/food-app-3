@@ -2,9 +2,9 @@
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 16488,
-  "expoServerNgrokUrl": "https://hm-7j6.coldraw.food-app-3.exp.direct",
-  "packagerNgrokUrl": "https://packager.hm-7j6.coldraw.food-app-3.exp.direct",
-  "ngrokPid": 19544,
+  "packagerPid": 17532,
+  "expoServerNgrokUrl": "https://9t-bus.coldraw.food-app-3.exp.direct",
+  "packagerNgrokUrl": "https://packager.9t-bus.coldraw.food-app-3.exp.direct",
+  "ngrokPid": 20204,
   "webpackServerPort": null
 }

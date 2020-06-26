@@ -15,13 +15,13 @@ const ProductItem = (props) => {
 
   const startAnimation = () => {
     Animated.timing(animation, {
-      toValue: 0.5,
+      toValue: 0.3,
       duration: 100
     }).start(() => {
 
       Animated.timing(animation, {
         toValue: 1,
-        duration: 500
+        duration: 300
       }).start();
     });
 
@@ -57,7 +57,7 @@ const ProductItem = (props) => {
   if (props.productSellerId === loggedInUser) {
     return (
       <TouchableWithoutFeedback onPress={onViewProduct} useForeground>
-        <Animated.View style={[styles.productItem, animatedStyles]}>
+        <Animated.View style={viewExpanded ? [styles.productItemExpanded, animatedStyles] : [animatedStyles, styles.productItem]}>
           <View style={styles.columnLeft}>
             <ImageBackground style={styles.image} source={{ uri: base64image }} >
               <View style={styles.columnLeftContent}>
@@ -89,13 +89,13 @@ const ProductItem = (props) => {
               <Text style={styles.title}>{props.title}</Text>
             </View>
             {viewExpanded &&
-              <Animated.View style={[styles.expandedView, animatedStyles]}>
+              <View style={styles.expandedView}>
                 <Text style={styles.expandedText}>{props.description.toString()}</Text>
                 <Text style={styles.expandedTextLarge}>Min. order: {props.minOrder.toString()}</Text>
                 {props.isMeatProduct === true && <Text style={styles.expandedTextLarge}>Contains meat</Text>}
                 {props.isGlutenFreeProduct === true && <Text style={styles.expandedTextLarge}>Gluten free</Text>}
                 {props.isVegetarianProduct === true && <Text style={styles.expandedTextLarge}>Vegetarian</Text>}
-              </Animated.View>
+              </View>
             }
             {!viewExpanded &&
               <View style={styles.iconHub}>
@@ -103,7 +103,7 @@ const ProductItem = (props) => {
                   <Text style={styles.description}>{props.isMeatProduct ? 'MEAT' : ''}</Text>
                 </View>
                 <View style={styles.iconContainer}>
-                  <Text style={styles.description}>{props.isGlutenFreeProduct ? 'GLUT' : ''}</Text>
+                  <Text style={styles.description}>{props.isGlutenFreeProduct ? 'GF' : ''}</Text>
                 </View>
                 <View style={styles.iconContainer}>
                   <Text style={styles.description}>{props.isVegetarianProduct ? 'VEG' : ''}</Text>
@@ -128,21 +128,21 @@ const ProductItem = (props) => {
     );
   } else {
     return (
-      < TouchableWithoutFeedback onPress={onViewProduct} useForeground>
+      <TouchableWithoutFeedback onPress={onViewProduct} useForeground>
         <Animated.View style={viewExpanded ? [styles.productItemExpanded, animatedStyles] : [animatedStyles, styles.productItem]}>
           <View style={styles.columnLeft}>
             <ImageBackground style={styles.image} source={{ uri: base64image }} >
               <View style={styles.columnLeftContent}>
                 <View style={viewExpanded ? styles.actionsExpanded : styles.actions}>
                   <View style={styles.buttonContainer}>
-                    < TouchableWithoutFeedback onPress={props.onAddToCart} useForeground>
+                    <TouchableWithoutFeedback onPress={props.onAddToCart} useForeground>
                       <View style={styles.buttonEdit}>
                         <Text style={styles.buttonText}>add</Text>
                       </View>
-                    </ TouchableWithoutFeedback>
+                    </TouchableWithoutFeedback>
                   </View>
                   <View style={styles.buttonContainer}>
-                    < TouchableWithoutFeedback onPress={onViewProduct} useForeground>
+                    <TouchableWithoutFeedback onPress={onViewProduct} useForeground>
                       <View style={styles.buttonDelete}>
                         <Ionicons
                           color={'white'}
@@ -150,7 +150,7 @@ const ProductItem = (props) => {
                           name={Platform.OS === 'android' ? 'md-information-circle' : 'ios-information-circle'}
                         />
                       </View>
-                    </ TouchableWithoutFeedback>
+                    </TouchableWithoutFeedback>
                   </View>
                 </View>
               </View>
@@ -175,7 +175,7 @@ const ProductItem = (props) => {
                   <Text style={styles.description}>{props.isMeatProduct ? 'MEAT' : ''}</Text>
                 </View>
                 <View style={styles.iconContainer}>
-                  <Text style={styles.description}>{props.isGlutenFreeProduct ? 'GLUT' : ''}</Text>
+                  <Text style={styles.description}>{props.isGlutenFreeProduct ? 'GF' : ''}</Text>
                 </View>
                 <View style={styles.iconContainer}>
                   <Text style={styles.description}>{props.isVegetarianProduct ? 'VEG' : ''}</Text>
@@ -197,7 +197,7 @@ const ProductItem = (props) => {
             <Text style={styles.price}>${props.price.toFixed(2)} <Text style={styles.each}>ea</Text></Text>
           </View>
         </Animated.View>
-      </ TouchableWithoutFeedback>
+      </TouchableWithoutFeedback>
     );
   }
 };
@@ -312,7 +312,7 @@ const styles = StyleSheet.create({
     margin: 5,
     marginLeft: 3,
     flexDirection: 'column',
-    justifyContent: 'flex-end'
+    justifyContent: 'flex-start'
   },
   titleBox: {
     marginLeft: 2,

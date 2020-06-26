@@ -90,9 +90,9 @@ const MenuSlide = props => {
               </View>
             )}
             {!isLoading && (
-              <View>
-                <Text style={styles.review}>"KEYWORDS OR
-                CATEGORIES ETC"</Text>
+              <View style={styles.keywordsBox}>
+                <Text style={styles.keywords}>Offers gluten-free</Text>
+                <Text style={styles.keywords}>Offers vegetarian</Text>
               </View>
             )}
           </View>
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
     elevation: 5,
     backgroundColor: 'white',
-    height: 300,
+    height: 255,
     width: '93%',
     marginLeft: 12,
     marginRight: 12,
@@ -195,7 +195,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'flex-start',
     width: '50%',
-    marginTop: 155,
+    marginTop: 115,
   },
   buttonContainer: {
     width: '100%',
@@ -244,14 +244,20 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: 'center'
   },
-  review: {
+  keywordsBox: {
     fontSize: 12,
     fontFamily: 'open-sans',
     marginLeft: 15,
-    marginBottom: 15,
     marginRight: 5,
-    height: 100,
-    color: Colors.green,
+    marginBottom: 5,
+    marginTop: 10,
+    height: 55,
+  },
+  keywords: {
+    fontSize: 12,
+    fontFamily: 'open-sans',
+    marginBottom: 5,
+    color: Colors.darkText,
   },
 });
 
