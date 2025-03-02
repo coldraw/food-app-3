@@ -9,7 +9,7 @@ Login:
 Main screen:
 
 
-![yumlo main screen](https://github.com/user-attachments/assets/f0983f39-65e5-49b2-bf66-7a71ab2136f5)
+![yumlo main screen](https://github.com/user-attachments/assets/b0d31c16-a1b2-4b77-af03-6805ce2e8610)
 
 Side drawer:
 
